@@ -5,7 +5,7 @@
 
 ; Bind the "Control-x n" key sequence to the function "linum",
 ; thus toggling line numbering.
-(setq load-path (cons "~/.emacs.d/" load-path))
+(setq load-path (cons "~/.emacs.d/plugins" load-path))
 (require 'linum)
 (global-set-key "\C-xn" 'linum)
 
@@ -82,8 +82,8 @@
 ; For R, Emacs Speaks Statistics
 ;(require 'ess-site)
 
-;;;For pymacs, requires virtualenv in wattvision joule project
-(add-to-list 'load-path "~/.emacs.d/pymacs/")
+;;;For pymacs
+(add-to-list 'load-path "~/.emacs.d/plugins/pymacs/")
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
 (autoload 'pymacs-eval "pymacs" nil t)
