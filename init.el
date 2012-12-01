@@ -83,15 +83,16 @@
 ;(require 'ess-site)
 
 ;;;For pymacs
-(add-to-list 'load-path "~/.emacs.d/plugins/pymacs/")
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-(autoload 'pymacs-autoload "pymacs")
+;;;loads a pymacs.el from the_virtual_env_root/pymacs
+(setq virtual-env (getenv "VIRTUAL_ENV"))
 
-;;;(require 'pymacs)
-(setq ropemacs-global-prefix "C-c r")
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
+(when (not (equal virtual-env 'nil))
+      (setq load-path (append
+                 (list (concat virtual-env "/pymacs" ))
+                 load-path))
+;;;      (setq ropemacs-enable-shortcuts nil)
+      (setq ropemacs-global-prefix "C-c C-p")
+      (require 'pymacs)
+      (pymacs-load "ropemacs" "rope-")
+      (setq ropemacs-enable-autoimport 't)
+      )
