@@ -96,3 +96,6 @@
       (pymacs-load "ropemacs" "rope-")
       (setq ropemacs-enable-autoimport 't)
       )
+
+;;; ERC
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
