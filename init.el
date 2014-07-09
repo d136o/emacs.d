@@ -99,3 +99,8 @@
 
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+
+;;; php-mode from:
+;;; git@github.com:ejmr/php-mode.git
+(add-to-list 'load-path "~/.emacs.d/php-mode/")
+(require 'php-mode)
