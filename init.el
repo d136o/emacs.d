@@ -104,3 +104,30 @@
 ;;; git@github.com:ejmr/php-mode.git
 (add-to-list 'load-path "~/.emacs.d/php-mode/")
 (require 'php-mode)
+
+;;; coffee-mode from:
+;;; git@github.com:defunkt/coffee-mode.git
+(add-to-list 'load-path "~/.emacs.d/coffee-mode/")
+(require 'coffee-mode)
+
+;;; flymake-easy from 
+;;; git@github.com:purcell/flymake-easy.git
+(add-to-list 'load-path "~/.emacs.d/flymake-easy/")
+(require 'flymake-easy)
+
+;;; flymake-php from
+;;; git@github.com:purcell/flymake-php.git
+(add-to-list 'load-path "~/.emacs.d/flymake-php/")
+(require 'flymake-php)
+(add-hook 'php-mode-hook 'flymake-php-load)
+
+;;; enable flymake when possible
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+
+;;;add color theme from git@github.com:sellout/emacs-color-theme-solarized.git
+(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/")
+;;;(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
+
+
+
